@@ -1,0 +1,122 @@
+.partnershipGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.imageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.logoContainer, .extraImageContainer {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logoContainer:hover, .extraImageContainer:hover {
+    transform: scale(1.05);
+}
+
+.logo, .extraImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.videoWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.videoWrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.lightboxOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightboxContent {
+    position: relative;
+}
+
+.lightboxImage {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: zoomIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.closeButton {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.closeButton:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+
+/* === Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
+    .partnershipGrid {
+        grid-template-columns: 1fr;
+    }
+    .content p {
+    text-align: justify;
+  }
+}

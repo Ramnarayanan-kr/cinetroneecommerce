@@ -1,0 +1,63 @@
+/* === Main Section === */
+.stats {
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* === Grid Container === */
+.statsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+}
+
+/* === Stat Item Box === */
+.statItem {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    background: linear-gradient(145deg, rgba(192, 160, 104, 0.1), rgba(192, 160, 104, 0.05));
+    border: 1px solid rgba(192, 160, 104, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; 
+}
+
+.statItem:hover {
+    transform: translateY(-5px);
+    border-color: rgba(192, 160, 104, 0.5);
+    background: linear-gradient(145deg, rgba(192, 160, 104, 0.15), rgba(192, 160, 104, 0.08));
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* === Text Styles === */
+.statValue {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.statLabel {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* === Disclaimer === */
+.disclaimer {
+    max-width: 600px;
+    margin: 40px auto 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
